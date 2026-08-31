@@ -24,9 +24,4 @@ node {
         sh '.venv/bin/python -m PyInstaller --onefile sources/add2vals.py'
         archiveArtifacts artifacts: 'dist/add2vals'
     }
-
-    stage('Archive Log') {
-        sh 'echo "Build, Test, and Deliver completed successfully." > log.txt'
-        archiveArtifacts artifacts: 'log.txt'
-    }
 }
